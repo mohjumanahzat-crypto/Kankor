@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <title>KANKOR </title>
+    <style>
+        .about {
+            position: fixed;
+            top: 0;
+            left: 5%;
+            text-decoration: none;
+            background: black;
+            border-radius: 50%;
+        }        .acc {
+            position: fixed;
+            top: 0;
+            right: 5%;
+            text-decoration: none;
+            background: black;
+            border-radius: 50%;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow-x: auto;
+            font-size: 20px;
+            max-width: 100%;
+        }
+
+
+
+
+
+        .home {
+            border-radius: 40px;
+            /* گوشه‌های گرد اختیاری */
+            box-shadow: 0 8px 3px rgba(3, 9, 30, 6);
+            //box-shadow: 0 16px 6px rgba(6,18,30,12);       
+            //text-align: right;    
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background: #333333;
+        }
+
+        a {
+            text-decoration: none;
+            color: #5DF4FF;
+        }
+    </style>
+</head>
+
+<body bgcolor="#000000">
+<script>
+var acc= localStorage.getItem("userid");
+if (acc==null || acc==""){
+    location.replace("register.html");
+}
+
+</script>
+    <font color="#ffffff">
+
+
+
+        <div class="home">
+            <pre id="home" dir="auto"></pre>
+
+
+
+
+        </div>
+
+
+        <a href="about.html">
+            <h2 class="about">❔</h2>
+        </a>
+        <a href="myaccount.html">
+            <h2 class="acc">🧔</h2>
+        </a>
+
+        <script>
+            fetch("home.php")
+                .then(response => response.text())
+                .then(data => {
+
+                    document.getElementById("home").innerHTML = data;
+
+                });
+        </script>
+
+    </font>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html
